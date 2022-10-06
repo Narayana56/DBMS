@@ -1,0 +1,156 @@
+mysql> create table staff (name char(30),age int(5),dept char(10));
+Query OK, 0 rows affected, 1 warning (0.11 sec)
+
+mysql> desc staff;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| name  | char(30) | YES  |     | NULL    |       |
+| age   | int      | YES  |     | NULL    |       |
+| dept  | char(10) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.08 sec)
+
+mysql> insert into staff values ('sasi','22','ece');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into staff values ('vasu','35','cse');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into staff values ('siva','40','cse');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into staff values ('ramu','25','AIML');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into staff values ('giri','28','AIML');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into staff values ('makesh','34','cse');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from staff;
++--------+------+------+
+| name   | age  | dept |
++--------+------+------+
+| sasi   |   22 | ece  |
+| vasu   |   35 | cse  |
+| siva   |   40 | cse  |
+| ramu   |   25 | AIML |
+| giri   |   28 | AIML |
+| makesh |   34 | cse  |
++--------+------+------+
+6 rows in set (0.00 sec)
+
+mysql> select * from staff where age between 20 and 30;
++------+------+------+
+| name | age  | dept |
++------+------+------+
+| sasi |   22 | ece  |
+| ramu |   25 | AIML |
+| giri |   28 | AIML |
++------+------+------+
+mysql> select * from staff where dept in ('cse','ece');
++--------+------+------+
+| name   | age  | dept |
++--------+------+------+
+| sasi   |   22 | ece  |
+| vasu   |   35 | cse  |
+| siva   |   40 | cse  |
+| makesh |   34 | cse  |
++--------+------+------+
+4 rows in set (0.00 sec)
+
++--------+----------+----------+-----------+--------+------+--------+
+| emp_id | emp_name | emp_dept | emp_phno  | gender | age  | salary |
++--------+----------+----------+-----------+--------+------+--------+
+|    103 | pavan    | ece      | 846570966 | f      |   25 |  25000 |
+|    103 | sreeja   | ece      | 846570966 | m      |   28 |  30000 |
+|    103 | praveen  | ece      | 846570966 | m      |   39 |  35000 |
+|    101 | sai      | cse      | 846574079 | m      |   34 |  32000 |
+|    101 | reshma   | cse      | 998940456 | f      |   32 |  40000 |
+|    101 | hari     | ese      | 123409876 | m      |   36 |  45000 |
++--------+----------+----------+-----------+--------+------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select count(salary) from employe;
++---------------+
+| count(salary) |
++---------------+
+|             6 |
++---------------+
+1 row in set (0.07 sec)
+
+mysql> select sum(salary) from employe;
++-------------+
+| sum(salary) |
++-------------+
+|      207000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(distinct salary) from employe;
++------------------------+
+| count(distinct salary) |
++------------------------+
+|                      6 |
++------------------------+
+1 row in set (0.07 sec)
+
+mysql> update employe set salary=45000 where emp_name='reshma';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from employe;
++--------+----------+----------+-----------+--------+------+--------+
+| emp_id | emp_name | emp_dept | emp_phno  | gender | age  | salary |
++--------+----------+----------+-----------+--------+------+--------+
+|    103 | pavan    | ece      | 846570966 | f      |   25 |  25000 |
+|    103 | sreeja   | ece      | 846570966 | m      |   28 |  30000 |
+|    103 | praveen  | ece      | 846570966 | m      |   39 |  35000 |
+|    101 | sai      | cse      | 846574079 | m      |   34 |  32000 |
+|    101 | reshma   | cse      | 998940456 | f      |   32 |  45000 |
+|    101 | hari     | ese      | 123409876 | m      |   36 |  45000 |
++--------+----------+----------+-----------+--------+------+--------+
+6 rows in set (0.07 sec)
+
+mysql> select count(distinct salary) from employe;
++------------------------+
+| count(distinct salary) |
++------------------------+
+|                      5 |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from employe;
++-------------+
+| avg(salary) |
++-------------+
+|  35333.3333 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select min(salary) from employe;
++-------------+
+| min(salary) |
++-------------+
+|       25000 |
++-------------+
+1 row in set (0.07 sec)
+
+mysql> select max(salary) from employe;
++-------------+
+| max(salary) |
++-------------+
+|       45000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from staff where dept not in ('cse');
++------+------+------+
+| name | age  | dept |
++------+------+------+
+| sasi |   22 | ece  |
+| ramu |   25 | AIML |
+| giri |   28 | AIML |
++------+------+------+
