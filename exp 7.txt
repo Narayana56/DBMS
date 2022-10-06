@@ -1,0 +1,34 @@
+mysql> select emp_name, gender from employe group by age;
++----------+--------+
+| emp_name | gender |
++----------+--------+
+| pavan    | f      |
+| sreeja   | m      |
+| praveen  | m      |
+| sai      | m      |
+| reshma   | f      |
+| hari     | m      |
++----------+--------+
+6 rows in set (0.07 sec)
+
+mysql> select emp_name, gender from employe group by age order by emp_name;
++----------+--------+
+| emp_name | gender |
++----------+--------+
+| hari     | m      |
+| pavan    | f      |
+| praveen  | m      |
+| reshma   | f      |
+| sai      | m      |
+| sreeja   | m      |
++----------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select emp_id, emp_dept from employe group by emp_name having emp_id < 103;
++--------+----------+
+| emp_id | emp_dept |
++--------+----------+
+|    101 | ece      |
+|    102 | ece      |
++--------+----------+
+2 rows in set (0.00 sec)
