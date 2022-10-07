@@ -1,0 +1,89 @@
+EQI JOIN
+mysql> select * from employe;
++--------+----------+----------+-----------+--------+------+--------+
+| emp_id | emp_name | emp_dept | emp_phno  | gender | age  | salary |
++--------+----------+----------+-----------+--------+------+--------+
+|    101 | pavan    | ece      | 846570966 | f      |   25 |  25000 |
+|    102 | sreeja   | ece      | 846570966 | m      |   28 |  30000 |
+|    103 | praveen  | ece      | 846570966 | m      |   39 |  35000 |
+|    104 | sai      | cse      | 846574079 | m      |   34 |  32000 |
+|    105 | reshma   | cse      | 998940456 | f      |   32 |  45000 |
+|    106 | hari     | ese      | 123409876 | m      |   36 |  45000 |
++--------+----------+----------+-----------+--------+------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select * from empolye;
++--------+----------+----------+-----------+
+| emp_id | emp_name | emp_dept | emp_phno  |
++--------+----------+----------+-----------+
+|    101 | sathya   | cse      | 998915428 |
+|    103 | pavan    | ece      | 846570966 |
+|    103 | ravi     | eee      |  98767891 |
+|    104 | nari     | IIT      | 123454327 |
+|    103 | reshma   | eee      |  98767891 |
+|    103 | hari     | eee      |  98767891 |
+|    103 | praveen  | ece      | 234467891 |
++--------+----------+----------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> select * from employe join empolye where employe.emp_name=empolye.emp_name;
++--------+----------+----------+-----------+--------+------+--------+--------+----------+----------+-----------+
+| emp_id | emp_name | emp_dept | emp_phno  | gender | age  | salary | emp_id | emp_name | emp_dept | emp_phno  |
++--------+----------+----------+-----------+--------+------+--------+--------+----------+----------+-----------+
+|    101 | pavan    | ece      | 846570966 | f      |   25 |  25000 |    103 | pavan    | ece      | 846570966 |
+|    105 | reshma   | cse      | 998940456 | f      |   32 |  45000 |    103 | reshma   | eee      |  98767891 |
+|    106 | hari     | ese      | 123409876 | m      |   36 |  45000 |    103 | hari     | eee      |  98767891 |
+|    103 | praveen  | ece      | 846570966 | m      |   39 |  35000 |    103 | praveen  | ece      | 234467891 |
++--------+----------+----------+-----------+--------+------+--------+--------+----------+----------+-----------+
+4 rows in set (0.00 sec)
+
+INNER JOIN
+mysql> select * from employe;
++--------+----------+----------+-----------+--------+------+--------+
+| emp_id | emp_name | emp_dept | emp_phno  | gender | age  | salary |
++--------+----------+----------+-----------+--------+------+--------+
+|    101 | pavan    | ece      | 846570966 | f      |   25 |  25000 |
+|    102 | sreeja   | ece      | 846570966 | m      |   28 |  30000 |
+|    103 | praveen  | ece      | 846570966 | m      |   39 |  35000 |
+|    104 | sai      | cse      | 846574079 | m      |   34 |  32000 |
+|    105 | reshma   | cse      | 998940456 | f      |   32 |  45000 |
+|    106 | hari     | ese      | 123409876 | m      |   36 |  45000 |
++--------+----------+----------+-----------+--------+------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select student.reg,employe.emp_name from student inner join employe on student.age=employe.age;
++------+----------+
+| reg  | emp_name |
++------+----------+
+|    1 | pavan    |
++------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from empolye;
++--------+----------+----------+-----------+
+| emp_id | emp_name | emp_dept | emp_phno  |
++--------+----------+----------+-----------+
+|    101 | sathya   | cse      | 998915428 |
+|    103 | pavan    | ece      | 846570966 |
+|    103 | ravi     | eee      |  98767891 |
+|    104 | nari     | IIT      | 123454327 |
+|    103 | reshma   | eee      |  98767891 |
+|    103 | hari     | eee      |  98767891 |
+|    103 | praveen  | ece      | 234467891 |
++--------+----------+----------+-----------+
+7 rows in set (0.07 sec)
+
+mysql> select empolye.emp_id,employe.emp_name from empolye inner join employe on empolye.emp_dept=employe.emp_dept;
++--------+----------+
+| emp_id | emp_name |
++--------+----------+
+|    101 | reshma   |
+|    101 | sai      |
+|    103 | praveen  |
+|    103 | sreeja   |
+|    103 | pavan    |
+|    103 | praveen  |
+|    103 | sreeja   |
+|    103 | pavan    |
++--------+----------+
+8 rows in set (0.00 sec)
