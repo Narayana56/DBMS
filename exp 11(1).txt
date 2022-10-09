@@ -1,0 +1,33 @@
+mysql> select emp_id,name,case when emp_id > 101 then 'exprienced faculty' else 'jounr faculyt' end as emp_idtext from department;
++--------+---------+--------------------+
+| emp_id | name    | emp_idtext         |
++--------+---------+--------------------+
+|    101 | sathya  | jounr faculyt      |
+|    103 | pavan   | exprienced faculty |
+|    103 | ravi    | exprienced faculty |
+|    104 | nari    | exprienced faculty |
+|    103 | reshma  | exprienced faculty |
+|    103 | hari    | exprienced faculty |
+|    103 | praveen | exprienced faculty |
++--------+---------+--------------------+
+7 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_dept,if(age > 33, "good", "better") from employe;
++----------+----------+--------------------------------+
+| emp_name | emp_dept | if(age > 33, "good", "better") |
++----------+----------+--------------------------------+
+| pavan    | ece      | better                         |
+| praveen  | ece      | good                           |
+| sai      | cse      | good                           |
+| reshma   | cse      | better                         |
+| hari     | ese      | good                           |
++----------+----------+--------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> select left('dateofbrith', 3) as extractstring;
++---------------+
+| extractstring |
++---------------+
+| dat           |
++---------------+
+1 row in set (0.00 sec)
