@@ -1,0 +1,13 @@
+mysql> create table book(b_id int(10),b_name char(10),b_publisher char(10),p_date int(10));
+Query OK, 0 rows affected, 2 warnings (0.07 sec)
+
+mysql> desc book;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| b_id        | int      | YES  |     | NULL    |       |
+| b_name      | char(10) | YES  |     | NULL    |       |
+| b_publisher | char(10) | YES  |     | NULL    |       |
+| p_date      | int      | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+4 rows in set (0.08 sec)
