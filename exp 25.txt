@@ -1,0 +1,14 @@
+
+mysql> create table student1(id int(10),name char(10),subjects char(10),marks int(10));
+Query OK, 0 rows affected, 2 warnings (0.10 sec)
+
+mysql> desc student1;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| id       | int      | YES  |     | NULL    |       |
+| name     | char(10) | YES  |     | NULL    |       |
+| subjects | char(10) | YES  |     | NULL    |       |
+| marks    | int      | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+4 rows in set (0.09 sec)
