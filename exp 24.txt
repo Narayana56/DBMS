@@ -1,0 +1,13 @@
+mysql> create table car(c_id int(10),c_name char(10),no_of_days int(10),date int(10));
+Query OK, 0 rows affected, 3 warnings (0.11 sec)
+
+mysql> desc car;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| c_id       | int      | YES  |     | NULL    |       |
+| c_name     | char(10) | YES  |     | NULL    |       |
+| no_of_days | int      | YES  |     | NULL    |       |
+| date       | int      | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+4 rows in set (0.09 sec)
