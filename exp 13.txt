@@ -1,0 +1,7 @@
+mysql> select repeat('sathya ',5);
++-------------------------------------+
+| repeat('sathya ',5)                 |
++-------------------------------------+
+| sathya sathya sathya sathya sathya  |
++-------------------------------------+
+1 row in set (0.00 sec)
