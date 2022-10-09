@@ -1,0 +1,55 @@
+mysql>use std_progress;
+Database changed
+mysql> select * from std_progress;
++--------+----------+-----------+-------+----------+
+| std_no | std_name | subject   | marks | std_dept |
++--------+----------+-----------+-------+----------+
+|      1 | earnest  | physics   |    67 | CSE      |
+|      2 | kishore  | chemistry |    84 | NULL     |
+|      3 | santhosh | maths     |    90 | NULL     |
++--------+----------+-----------+-------+----------+
+3 rows in set (0.00 sec)
+
+mysql> COMMIT;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SET autocommit=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from std_progress;
++--------+----------+-----------+-------+----------+
+| std_no | std_name | subject   | marks | std_dept |
++--------+----------+-----------+-------+----------+
+|      1 | earnest  | physics   |    67 | CSE      |
+|      2 | kishore  | chemistry |    84 | NULL     |
+|      3 | santhosh | maths     |    90 | NULL     |
++--------+----------+-----------+-------+----------+
+3 rows in set (0.00 sec)
+
+mysql> SAVEPOINT Insertion;
+Query OK, 0 rows affected (0.00 sec)
+mysql> UPDATE std_progress SET std_dept='ECE' WHERE std_no=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from std_progress;
++--------+----------+-----------+-------+----------+
+| std_no | std_name | subject   | marks | std_dept |
++--------+----------+-----------+-------+----------+
+|      1 | earnest  | physics   |    67 | CSE      |
+|      2 | kishore  | chemistry |    84 | ECE      |
+|      3 | santhosh | maths     |    90 | NULL     |
++--------+----------+-----------+-------+----------+
+3 rows in set (0.00 sec)
+
+mysql> ROLLBACK TO Insertion;
+Query OK, 0 rows affected (0.00 sec)
+mysql> select * from std_progress;
++--------+----------+-----------+-------+----------+
+| std_no | std_name | subject   | marks | std_dept |
++--------+----------+-----------+-------+----------+
+|      1 | earnest  | physics   |    67 | CSE      |
+|      2 | kishore  | chemistry |    84 | NULL     |
+|      3 | santhosh | maths     |    90 | NULL     |
++--------+----------+-----------+-------+----------+
+3 rows in set (0.00 sec)
