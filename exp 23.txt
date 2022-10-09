@@ -1,0 +1,13 @@
+mysql> create table hospital(p_id int(10),p_name char(10),disease char(10),date int(10));
+Query OK, 0 rows affected, 2 warnings (0.10 sec)
+
+mysql> desc hospital;;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| p_id    | int      | YES  |     | NULL    |       |
+| p_name  | char(10) | YES  |     | NULL    |       |
+| disease | char(10) | YES  |     | NULL    |       |
+| date    | int      | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+4 rows in set (0.09 sec)
